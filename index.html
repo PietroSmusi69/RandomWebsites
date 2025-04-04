@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Site Buttons</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f0f0;
+    }
+    button {
+      margin: 15px;
+      padding: 15px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+      background-color: #4CAF50;
+      color: white;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click a Button, Go Somewhere Random 🌍</h1>
+
+  <button onclick="goRandom(0)">Button 1</button>
+  <button onclick="goRandom(1)">Button 2</button>
+  <button onclick="goRandom(2)">Button 3</button>
+  <button onclick="goRandom(3)">Button 4</button>
+
+  <script>
+    const websites = [
+      // You can customize these lists per button if you want different pools
+      [
+        "https://example.com",
+        "https://wikipedia.org",
+        "https://openstreetmap.org",
+        "https://spacejam.com"
+      ],
+      [
+        "https://theuselessweb.com",
+        "https://hackertyper.net",
+        "https://radio.garden",
+        "https://pointerpointer.com"
+      ],
+      [
+        "https://archive.org",
+        "https://neal.fun",
+        "https://thispersondoesnotexist.com",
+        "https://zoomquilt.org"
+      ],
+      [
+        "https://10015.io",
+        "https://lorempixel.com",
+        "https://mondrianandme.com",
+        "https://windows93.net"
+      ]
+    ];
+
+    function goRandom(buttonIndex) {
+      const pool = websites[buttonIndex];
+      const randomIndex = Math.floor(Math.random() * pool.length);
+      window.open(pool[randomIndex], "_blank"); // opens in new tab
+    }
+  </script>
+
+</body>
+</html>
